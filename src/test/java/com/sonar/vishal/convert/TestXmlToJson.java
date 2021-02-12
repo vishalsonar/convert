@@ -13,12 +13,12 @@ import com.sonar.vishal.convert.util.FileUtil;
 import com.sonar.vishal.convert.util.ValidateUtil;
 
 @RunWith(JUnit4.class)
-public class XmlToJson {
+public class TestXmlToJson {
 
 	private String xml;
 	private Convert convert;
 
-	public XmlToJson() {
+	public TestXmlToJson() {
 		convert = new Convert();
 	}
 

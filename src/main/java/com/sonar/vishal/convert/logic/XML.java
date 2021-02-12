@@ -21,7 +21,7 @@ import com.sonar.vishal.convert.util.Inflector;
 
 public class XML {
 
-	private final String version = "1.0";
+	private static final String version = "1.0";
 	private Transformer transformer;
 	private Document document;
 	private Inflector inflector;
@@ -99,7 +99,6 @@ public class XML {
 		while (iterator.hasNext()) {
 			array = iterator.next();
 			if (array.isJsonPrimitive()) {
-				// tempParentElement.appendChild(setJsonPrimitiveXml(singular, array));
 				throw new FailedToConvertException("array of json primitive not supported");
 			}
 			if (array.isJsonArray()) {

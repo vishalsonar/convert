@@ -17,8 +17,6 @@ import com.google.gson.JsonPrimitive;
 
 public class JSON {
 
-	private Document document;
-	private JsonObject root;
 	private DocumentBuilder documentBuilder;
 
 	public JSON(DocumentBuilder documentBuilderParam) {
@@ -26,6 +24,8 @@ public class JSON {
 	}
 
 	public String generate(String xml) throws SAXException, IOException {
+		Document document = null;
+		JsonObject root = null;
 		document = documentBuilder.parse(new ByteArrayInputStream(xml.getBytes()));
 		NodeList nodeList = document.getChildNodes();
 		root = setXmlTree(nodeList).getAsJsonObject();
