@@ -17,7 +17,10 @@ public class FileUtil {
 		StringBuilder builder = new StringBuilder();
 		Scanner sc;
 		try {
-			String filePath = FileUtil.class.getResource(DATA_PATH + fileName).getFile().replaceAll("%20", " ");
+			String filePath = FileUtil.class.getResource(DATA_PATH + fileName).getFile();
+			if (filePath.contains("%20")) {
+				filePath = filePath.replaceAll("%20", " ");
+			}
 			File file = new File(filePath);
 			sc = new Scanner(file);
 			while (sc.hasNext()) {
