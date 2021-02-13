@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class FileUtil {
 
-	private static final String DATA_PATH = "/com/sonar/vishal/convert/data/";
+	private static final String DATA_PATH = "src/test/resources/";
 
 	/**
 	 * Returns File data as String.
@@ -17,11 +17,7 @@ public class FileUtil {
 		StringBuilder builder = new StringBuilder();
 		Scanner sc;
 		try {
-			String filePath = FileUtil.class.getResource(DATA_PATH + fileName).getFile();
-			if (filePath.contains("%20")) {
-				filePath = filePath.replaceAll("%20", " ");
-			}
-			File file = new File(filePath);
+			File file = new File(DATA_PATH + fileName);
 			sc = new Scanner(file);
 			while (sc.hasNext()) {
 				builder.append(sc.nextLine());
