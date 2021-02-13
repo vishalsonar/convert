@@ -50,7 +50,7 @@ public class XML {
 	}
 
 	private String convertXmlToString() {
-		String result = null;
+		String result = "";
 		DOMSource domSource = null;
 		try {
 			StringWriter writer = new StringWriter();
@@ -63,7 +63,7 @@ public class XML {
 			transformer.transform(domSource, streamResult);
 			result = writer.toString();
 		} catch (Exception e) {
-			result = "";
+			// Do Nothing.
 		}
 		return result;
 	}
