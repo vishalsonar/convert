@@ -1,5 +1,6 @@
 # convert
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Build Status](https://travis-ci.com/vishalsonar/convert.svg?branch=main)](https://travis-ci.com/vishalsonar/convert)
 [![Bugs](https://sonarcloud.io/api/project_badges/measure?project=vishalsonar_convert&metric=bugs)](https://sonarcloud.io/dashboard?id=vishalsonar_convert)
 [![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=vishalsonar_convert&metric=code_smells)](https://sonarcloud.io/dashboard?id=vishalsonar_convert)
