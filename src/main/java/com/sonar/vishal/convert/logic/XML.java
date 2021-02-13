@@ -21,7 +21,7 @@ import com.sonar.vishal.convert.util.Inflector;
 
 public class XML {
 
-	private static final String version = "1.0";
+	private static final String VERSION = "1.0";
 	private Transformer transformer;
 	private Document document;
 	private Inflector inflector;
@@ -30,7 +30,7 @@ public class XML {
 	public XML(DocumentBuilder documentBuilder, Transformer xmlTransformer) {
 		document = documentBuilder.newDocument();
 		document.setXmlStandalone(true);
-		document.setXmlVersion(version);
+		document.setXmlVersion(VERSION);
 		inflector = new Inflector();
 		transformer = xmlTransformer;
 	}
