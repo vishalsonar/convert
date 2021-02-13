@@ -27,7 +27,7 @@ public class Convert {
 			xml = new XML(documentBuilder, transformer);
 			json = new JSON(documentBuilder);
 		} catch (Exception e) {
-			e.printStackTrace();
+			// Do Nothing.
 		}
 	}
 
@@ -36,7 +36,7 @@ public class Convert {
 		try {
 			result = xml.generate(json);
 		} catch (Exception e) {
-			e.printStackTrace();
+			// Do Nothing.
 		}
 		return result;
 	}
@@ -46,7 +46,7 @@ public class Convert {
 		try {
 			result = json.generate(xml);
 		} catch (Exception e) {
-			e.printStackTrace();
+			// Do Nothing.
 		}
 		return result;
 	}
