@@ -47,28 +47,31 @@ public class JSON {
 			}
 			if (length == 0 || length == 1) {
 				parentObject.add(name, setXmlElement(node));
-				continue;
 			}
 			if (length > 1) {
-				JsonElement element = setXmlTree(node.getChildNodes());
-				if (parentObject.has(name)) {
-					JsonElement innerElement = parentObject.get(name);
-					if (innerElement.isJsonObject()) {
-						JsonArray array = new JsonArray();
-						array.add(innerElement);
-						array.add(element);
-						parentObject.add(name, array);
-					}
-					if (innerElement.isJsonArray()) {
-						innerElement.getAsJsonArray().add(element);
-						parentObject.add(name, innerElement);
-					}
-				} else {
-					parentObject.add(name, element);
-				}
+				processMultipleNodeChild(name, parentObject, node);
 			}
 		}
 		return parentObject;
+	}
+
+	private void processMultipleNodeChild(String name, JsonObject parentObject, Node node) {
+		JsonElement element = setXmlTree(node.getChildNodes());
+		if (parentObject.has(name)) {
+			JsonElement innerElement = parentObject.get(name);
+			if (innerElement.isJsonObject()) {
+				JsonArray array = new JsonArray();
+				array.add(innerElement);
+				array.add(element);
+				parentObject.add(name, array);
+			}
+			if (innerElement.isJsonArray()) {
+				innerElement.getAsJsonArray().add(element);
+				parentObject.add(name, innerElement);
+			}
+		} else {
+			parentObject.add(name, element);
+		}
 	}
 
 	private JsonElement setXmlElement(Node node) {
